@@ -152,6 +152,40 @@ class UserController extends QcController
 | 删除一个用户     | DELETE | http://host:port/account/users/1         |
 | 禁用一个用户     | POST   | http://host:port/account/users/1/disable |
 
+####用户登录态使用
+
+1、登录
+
+请求接口http://host:port/user/login,输入登录类型、用户名、密码,登录成功token信息
+```json
+{
+    "code": 0,
+    "message": "ok",
+    "request_id": "JNCzOboICoKujJBF1O_A-FQvJwmOIB6c",
+    "data": {
+        "id": "1",
+        "user_name": "张三",
+        "email": "test@qq.com",
+        "mobile": "15688888888",
+        "token": "JYh6YT9pD9tSTGHXx6oSZVvBtJ3TNxx9"
+    },
+    "profiling": {
+        "db": {
+            "sqlCount": 4,
+            "duration": 0.046414375305176
+        }
+    }
+}
+```
+
+2、使用登录态操作资源
+~~~
+把上一步获取到的token放入httpheader中，格式如下:
+
+WWW-Authorization  Bearer JYh6YT9pD9tSTGHXx6oSZVvBtJ3TNxx9
+
+调用接口服务端即可识别当前用户
+~~~
 
 ####添加一个定时任务
 
