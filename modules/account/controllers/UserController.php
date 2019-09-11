@@ -1,18 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zhangbing
- * Date: 2019/3/28
- * Time: 10:23
- */
 
 namespace app\modules\account\controllers;
 
-
 use app\constants\ErrInfo;
-use app\core\QcController;
-use app\core\QcException;
-use app\core\QcResponse;
+use app\core\{
+    QcController, QcException, QcResponse
+};
 use app\modules\account\businesses\BusinessInterface\IUserBusiness;
 use yii\base\NotSupportedException;
 
